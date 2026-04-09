@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Club de Regatas Galicia - Club Náutico en Vilagarcía de Arousa</title>
+  <meta name="description" content="Real Club de Regatas Galicia, fundado en 1902, el decano de los clubs náuticos gallegos." />
+  <meta property="og:title"   content="Real Club de Regatas Galicia - Fundado en 1902" />
+  <meta property="og:type"    content="website" />
+  <meta property="og:image"   content="images/escudo-rcrg.png" />
+  <link rel="icon" type="image/png" href="images/escudo-rcrg.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+<div id="toast" class="toast"></div>
+
+<!-- ═══ HEADER ═══ -->
+<div id="site-header">
+  <div class="header-inner">
+    <div class="header-logo" onclick="openLightbox('images/logo-rcrg.png','Grímpola RCRG')" title="Ver grímpola">
+      <img src="images/logo-rcrg.png" alt="Grímpola RCRG" />
+      <div class="header-logo-text">
+        <h1>Real Club de Regatas Galicia</h1>
+        <p>Fundado en 1902</p>
+      </div>
+    </div>
+    <nav class="desktop-nav" id="desktop-nav">
+      <button onclick="navScrollTo('inicio')"    data-section="inicio"    class="active">Inicio</button>
+      <button onclick="navScrollTo('historia')"  data-section="historia">Historia</button>
+      <button onclick="navScrollTo('galeria')"   data-section="galeria">Galería</button>
+      <button onclick="navScrollTo('regatas')"   data-section="regatas">Regatas</button>
+      <button onclick="navScrollTo('noticias')"  data-section="noticias">Noticias</button>
+      <button onclick="navScrollTo('convenios')" data-section="convenios">Convenios</button>
+      <button onclick="navScrollTo('contacto')"  data-section="contacto">Contacto</button>
+    </nav>
+    <button class="header-mobile-btn" onclick="toggleMobileMenu()">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="mobile-nav">
+    <button onclick="navScrollTo('inicio');toggleMobileMenu()"    data-section="inicio">Inicio</button>
+    <button onclick="navScrollTo('historia');toggleMobileMenu()"  data-section="historia">Historia</button>
+    <button onclick="navScrollTo('galeria');toggleMobileMenu()"   data-section="galeria">Galería</button>
+    <button onclick="navScrollTo('regatas');toggleMobileMenu()"   data-section="regatas">Regatas</button>
+    <button onclick="navScrollTo('noticias');toggleMobileMenu()"  data-section="noticias">Noticias</button>
+    <button onclick="navScrollTo('convenios');toggleMobileMenu()" data-section="convenios">Convenios</button>
+    <button onclick="navScrollTo('contacto');toggleMobileMenu()"  data-section="contacto">Contacto</button>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Real Club de Regatas<span>Galicia</span></h1>
+      <p class="founded">Fundado en 1902</p>
+      <p class="sub">El Club Náutico más antiguo de Galicia</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="navScrollTo('historia')">Nuestra Historia</button>
+        <button class="btn-outline" onclick="navScrollTo('contacto')">Contactar</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h2>Información del Club</h2>
+      <div class="info-row">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <div class="info-title">Horario de la Sede Social</div>
+          <div class="info-text">Mañana: 12 a 14:30 h</div>
+          <div class="info-text">Tarde: 16 a 20 h (viernes y sábado hasta 21:00)</div>
+          <div class="info-text">Domingo: cerrado</div>
+          <div class="info-text" style="color:#93c5fd;font-size:.75rem;margin-top:4px">En Agosto: 10 a 24 h ininterrumpido</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="info-title">Localización</div>
+          <div class="info-text">Avenida de la Marina, 74</div>
+          <div class="info-text">36600 Vilagarcía de Arousa (a 600 m. de la parada del AVE)</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72 12.05 12.05 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.05 12.05 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="info-title">Teléfono</div>
+          <div class="info-text">986 500 123 / 610 926 126</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="info-title">Email</div>
+          <a href="mailto:correo@rcrgalicia.com" class="info-text" style="color:#bfdbfe">correo@rcrgalicia.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about"><div class="container">
+  <div class="section-header">
+    <h2>Bienvenidos al Real Club de Regatas Galicia</h2>
+    <div class="underline-bar"></div>
+    <p>El Real Club de Regatas Galicia tiene como principal objetivo fomentar la práctica de la vela mediante la organización de regatas y escuelas de vela.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+      <h3>Desde 1902</h3><p>El Club Náutico más antiguo de Galicia con más de 120 años de historia</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 10H3z"/></svg></div>
+      <h3>Regatas</h3><p>Organizamos regatas anuales de referencia en la Ría de Arousa</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Sede Social</h3><p>Amplio salón de estilo inglés con biblioteca y sala de juegos</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h3>Actividades</h3><p>Campeonatos, comidas, cócteles, recepciones y entregas de trofeos</p>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <img src="images/salon-principal.jpg" alt="Salón principal del Club" />
+      <p class="img-caption">Salón principal presidido por las fotos del Rey Alfonso XIII y Dª Victoria Eugenia de Battenberg</p>
+    </div>
+    <div class="about-text">
+      <h3>Nuestra Sede Social</h3>
+      <p>En la sede social del Club ofrecemos el mejor servicio en un amplio salón privado de estilo inglés con biblioteca y una sala de juegos con servicio de bar-cafetería.</p>
+      <p>El Club dispone de canal satélite TV y red Wifi a disposición de los socios, así como de una tienda con productos del Club.</p>
+      <p>Durante el año se organizan diferentes actividades sociales tales como campeonatos de juegos, comidas, cócteles, recepciones y entregas de trofeos.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ HISTORY ═══ -->
+<section id="historia"><div class="container">
+  <div class="section-header">
+    <h2>Historia del Club</h2>
+    <div class="underline-bar"></div>
+    <p>El decano de los Clubs náuticos gallegos</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-entry">
+      <div class="timeline-text">
+        <div class="year-badge">1902</div>
+        <h3>Fundación del Club</h3>
+        <p>Situado en Vilagarcía de Arousa, Pontevedra, este Club fue fundado en 1902 absorbiendo a otra entidad que se llamaba La Peña de 1878. Su primer presidente fue John Trulock, el abuelo de Camilo José Cela.</p>
+        <p>John Trulock era entonces el presidente de la Compañía del Ferrocarril entre Carril y Cornes (hoy un barrio de Santiago de Compostela).</p>
+      </div>
+      <div class="timeline-img half">
+        <img src="images/trulock.jpg" alt="John Trulock" />
+        <p class="img-caption">John Trulock, primer presidente del Real Club de Regatas Galicia</p>
+      </div>
+    </div>
+    <div class="timeline-entry reverse">
+      <div class="timeline-img">
+        <img src="images/sede-historica.jpg" alt="Sede histórica del Club" />
+        <p class="img-caption">Sede del Club al borde del mar, sin los rellenos realizados en Vilagarcía</p>
+      </div>
+      <div class="timeline-text">
+        <div class="year-badge">1905</div>
+        <h3>Título de Real</h3>
+        <p>En 1905, el rey Alfonso XIII le concedió el título de Real. La concesión rezaba: "Es el decano de Galicia y uno de los clubes más antiguos de Europa".</p>
+      </div>
+    </div>
+    <div class="timeline-entry">
+      <div class="timeline-text">
+        <div class="year-badge">1913</div>
+        <h3>Primera Semana Náutica de España</h3>
+        <p>En 1913 se estrenó la Semana Náutica de Villagarcía, que fue la primera semana náutica de España y que ofrecía un premio muy importante para la época: ¡MIL PESETAS!</p>
+      </div>
+      <div class="timeline-img">
+        <img src="images/historia-1913.jpg" alt="Ambiente histórico 1913" />
+        <p class="img-caption">Ambiente a comienzos del pasado siglo en Vilagarcía</p>
+      </div>
+    </div>
+    <div class="timeline-entry reverse">
+      <div class="timeline-img">
+        <img src="images/copa-del-rey-1927.jpg" alt="Copa del Rey 1927" />
+        <p class="img-caption">Copa del Rey de 1927 (Colección Seoane &amp; Prado)</p>
+      </div>
+      <div class="timeline-text">
+        <div class="year-badge">1927</div>
+        <h3>Copa del Rey</h3>
+        <p>En el verano de 1927 se celebraba la Copa del Rey de Vela en la Ría de Vigo, en una competición en la que la victoria le sonreía al "Cisco V" del Real Club de Regatas Galicia.</p>
+        <div class="podio">
+          <h4>Copa del Rey 1927 — Podio</h4>
+          <ol>
+            <li>1º CISCO V de Wenceslao González Garra (RCRG)</li>
+            <li>2º MARIPOSA de Francisco Villaverde (RCRG)</li>
+            <li>3º MOSQUITO de Alfonso González Garra (RCRG)</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ PRESIDENT ═══ -->
+<section id="presidente"><div class="container">
+  <div class="section-header">
+    <h2>Presidente y Junta Directiva</h2>
+    <div class="underline-bar"></div>
+  </div>
+  <div class="president-grid">
+    <div><img src="images/presidente.jpg" alt="Presidente" /></div>
+    <div class="president-text">
+      <h3>Wenceslao González-Garra</h3>
+      <p class="role">Presidente del Club</p>
+      <p>El pasado 5 de Diciembre de 2022 se celebró la Asamblea Extraordinaria en el Real Club de Regatas Galicia, y fue nombrado Wenceslao González-Garra como nuevo Presidente del Club.</p>
+      <p>Le acompaña como Vicepresidente Fernando Sánchez de Diego, y pretenden contribuir a mostrar una imagen más cercana y actual de uno de Clubs de Regatas más antiguos de España.</p>
+      <a href="mailto:presidente@rcrgalicia.com">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        presidente@rcrgalicia.com
+      </a>
+    </div>
+  </div>
+  <div class="junta-box">
+    <div class="junta-inner">
+      <div class="junta-img">
+        <img src="images/junta-directiva.png" alt="Junta Directiva" onclick="openLightbox(this.src,'Junta Directiva')" />
+      </div>
+      <div class="junta-contacts">
+        <h4>Contactos de la Junta</h4>
+        
+        <div class="contact-row">
+          <span>Presidente</span>
+          <a href="mailto:presidente@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            presidente@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Vicepresidente</span>
+          <a href="mailto:vicepresidente@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            vicepresidente@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Secretario</span>
+          <a href="mailto:secretario@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            secretario@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Tesorero</span>
+          <a href="mailto:tesorero@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            tesorero@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Comodoro</span>
+          <a href="mailto:comodoro@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            comodoro@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Dirección de Eventos</span>
+          <a href="mailto:direccioneventos@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            direccioneventos@rcrgalicia.com
+          </a>
+        </div>
+        <div class="contact-row">
+          <span>Vocal Jurídico</span>
+          <a href="mailto:vocaljuridico@rcrgalicia.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            vocaljuridico@rcrgalicia.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="galeria"><div class="container">
+  <div class="section-header">
+    <h2>Galería</h2>
+    <div class="underline-bar"></div>
+    <p>Imágenes del club y sus regatas</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" onclick="openLightbox('images/gallery/gallery-001.jpg','Años 1920')">
+        <img src="images/gallery/gallery-001.jpg" alt="Años 1920" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-002.jpg','Entrega de trofeos Santa Rita')">
+        <img src="images/gallery/gallery-002.jpg" alt="Entrega de trofeos Santa Rita" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-003.jpg','Celebración en el Club')">
+        <img src="images/gallery/gallery-003.jpg" alt="Celebración en el Club" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-004.jpg','Campo de Regatas')">
+        <img src="images/gallery/gallery-004.jpg" alt="Campo de Regatas" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-005.jpg','Entrega de Trofeos San Roque')">
+        <img src="images/gallery/gallery-005.jpg" alt="Entrega de Trofeos San Roque" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-006.jpg','Presentación Rodríguez-Toubes')">
+        <img src="images/gallery/gallery-006.jpg" alt="Presentación Rodríguez-Toubes" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-007.jpg','Entrega trofeos Rodríguez-Toubes')">
+        <img src="images/gallery/gallery-007.jpg" alt="Entrega trofeos Rodríguez-Toubes" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-008.jpg','Con el Almirante Rodríguez-Toubes')">
+        <img src="images/gallery/gallery-008.jpg" alt="Con el Almirante Rodríguez-Toubes" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-009.jpg','Llegada de la Regata')">
+        <img src="images/gallery/gallery-009.jpg" alt="Llegada de la Regata" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-010.jpg','Campeones San Roque')">
+        <img src="images/gallery/gallery-010.jpg" alt="Campeones San Roque" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-011.jpg','Presentación con trofeo')">
+        <img src="images/gallery/gallery-011.jpg" alt="Presentación con trofeo" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-012.jpg','Campo de Regatas')">
+        <img src="images/gallery/gallery-012.jpg" alt="Campo de Regatas" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-013.jpg','Socios del Club')">
+        <img src="images/gallery/gallery-013.jpg" alt="Socios del Club" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-014.jpg','Junta Directiva 1921')">
+        <img src="images/gallery/gallery-014.jpg" alt="Junta Directiva 1921" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-015.jpg','Junta 2002')">
+        <img src="images/gallery/gallery-015.jpg" alt="Junta 2002" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-016.jpg','Gala de verano')">
+        <img src="images/gallery/gallery-016.jpg" alt="Gala de verano" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-017.jpg','Gala de verano')">
+        <img src="images/gallery/gallery-017.jpg" alt="Gala de verano" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-018.jpg','Gala de verano')">
+        <img src="images/gallery/gallery-018.jpg" alt="Gala de verano" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-019.jpg','Gala de verano')">
+        <img src="images/gallery/gallery-019.jpg" alt="Gala de verano" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-020.jpg','Gala de verano')">
+        <img src="images/gallery/gallery-020.jpg" alt="Gala de verano" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-021.jpeg','San Roque 2024')">
+        <img src="images/gallery/gallery-021.jpeg" alt="San Roque 2024" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-022.jpg','San Roque 2025')">
+        <img src="images/gallery/gallery-022.jpg" alt="San Roque 2025" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-023.jpg','Santa Rita')">
+        <img src="images/gallery/gallery-023.jpg" alt="Santa Rita" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-024.jpg','Santa Rita')">
+        <img src="images/gallery/gallery-024.jpg" alt="Santa Rita" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-025.jpg','Santa Rita')">
+        <img src="images/gallery/gallery-025.jpg" alt="Santa Rita" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-026.jpg','Santa Rita')">
+        <img src="images/gallery/gallery-026.jpg" alt="Santa Rita" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-027.jpg','Escuela de Vela')">
+        <img src="images/gallery/gallery-027.jpg" alt="Escuela de Vela" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-028.jpg','Edificio')">
+        <img src="images/gallery/gallery-028.jpg" alt="Edificio" loading="lazy" />
+      </div><div class="gallery-item" onclick="openLightbox('images/gallery/gallery-029.jpg','Playa 1920')">
+        <img src="images/gallery/gallery-029.jpg" alt="Playa 1920" loading="lazy" />
+      </div>
+  </div>
+</div></section>
+
+<!-- ═══ REGATTAS ═══ -->
+<section id="regatas"><div class="container">
+  <div class="section-header">
+    <h2>Regatas</h2>
+    <div class="underline-bar"></div>
+    <p>Calendario de regatas organizadas por el Real Club de Regatas Galicia</p>
+  </div>
+  <div class="year-tabs">
+    <button class="year-tab active" data-year="2026" onclick="showYear('2026')">2026</button>
+    <button class="year-tab" data-year="2025" onclick="showYear('2025')">2025</button>
+  </div>
+  <div class="regatta-year regattas-grid" data-year="2026" style="display:grid">
+    
+      <div class="regatta-card">
+        <img src="images/regata-liga2026.png" alt="Liga de Cruceros Ría de Arousa 2026" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>Liga de Cruceros Ría de Arousa 2026</h3>
+          <p class="regatta-date">📅 28 marzo 2026 &nbsp;<span style="background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;font-size:.75rem">Disputada</span></p>
+          <p class="regatta-desc">Liga de Cruceros organizada junto a los Clubes: AROUSA NORTE, Club Náutico Rianxo, C.N. Deportivo Riveira.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/liga_arousa_2026" target="_blank" class="btn-white">Resultados</a><a href="https://escora.rfgvela.es/regatta/liga_arousa_2026" target="_blank" class="btn-bordered">Inscripción</a></div>
+        </div>
+      </div>
+      <div class="regatta-card">
+        <img src="images/regata-toubes2026.png" alt="XXX Trofeo Almirante Rodríguez-Toubes" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>XXX Trofeo Almirante Rodríguez-Toubes</h3>
+          <p class="regatta-date">📅 16–17 mayo 2026</p>
+          <p class="regatta-desc">Puntuable para la Copa Galicia. Organizada junto a la Comisión Naval de Regatas de la Escuela Naval Militar de Marín.</p>
+          
+        </div>
+      </div>
+      <div class="regatta-card">
+        
+        <div class="regatta-card-body">
+          <h3>IV Trofeo Santa Rita de Cruceros</h3>
+          <p class="regatta-date">📅 23 mayo 2026</p>
+          <p class="regatta-desc">Regata local organizada por las fiestas de Santa Rita.</p>
+          
+        </div>
+      </div>
+      <div class="regatta-card">
+        <img src="images/regata-liga-snipe2026.jpg" alt="Liga Snipe Hotel Vilagarcía" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>Liga Snipe Hotel Vilagarcía</h3>
+          <p class="regatta-date">📅 20 jun / 11 jul / 12 sep / 17 oct 2026</p>
+          <p class="regatta-desc">Promocionado por Hotel Vilagarcía.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/liga-snipe-hotel-vilagarcia-2026" target="_blank" class="btn-bordered">Inscripción</a></div>
+        </div>
+      </div>
+      <div class="regatta-card">
+        
+        <div class="regatta-card-body">
+          <h3>LVIII Regata San Roque de Snipe. XIV Trofeo Ramiro Carregal</h3>
+          <p class="regatta-date">📅 22–23 agosto 2026</p>
+          <p class="regatta-desc">Regata Clasificatoria para el Circuito Gallego.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/2893146289873" target="_blank" class="btn-bordered">Inscripción</a></div>
+        </div>
+      </div>
+  </div>
+  <div class="regatta-year regattas-grid" data-year="2025" style="display:none">
+    
+      <div class="regatta-card">
+        
+        <div class="regatta-card-body">
+          <h3>Liga de Cruceros Ría de Arousa 2025</h3>
+          <p class="regatta-date">📅 5 abril 2025 &nbsp;<span style="background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;font-size:.75rem">Disputada</span></p>
+          <p class="regatta-desc">Organizamos la regata del 5 de abril con la entrega de trofeos en la Sede del Club.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/liga_arousa_2025" target="_blank" class="btn-white">Resultados</a></div>
+        </div>
+      </div>
+      <div class="regatta-card">
+        <img src="images/regata-toubes2025.jpg" alt="XXIX Regata Almirante Rodríguez-Toubes" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>XXIX Regata Almirante Rodríguez-Toubes</h3>
+          <p class="regatta-date">📅 17–18 mayo 2025 &nbsp;<span style="background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;font-size:.75rem">Disputada</span></p>
+          <p class="regatta-desc">La Regata de cruceros Almirante Rodríguez-Toubes se organiza junto a la Escuela Naval de Marín desde 1997.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regata/xxix-trofeo-almirante-rodriguez-toubes" target="_blank" class="btn-white">Resultados</a></div>
+        </div>
+      </div>
+      <div class="regatta-card">
+        <img src="images/regata-rita2025.jpg" alt="III Regata Trofeo Santa Rita 2025" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>III Regata Trofeo Santa Rita 2025</h3>
+          <p class="regatta-date">📅 24 mayo 2025 &nbsp;<span style="background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;font-size:.75rem">Disputada</span></p>
+          <p class="regatta-desc">Nuestro III Trofeo Santa Rita para la clase cruceros.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/regata-trofeo-santarita-2025" target="_blank" class="btn-white">Resultados</a></div>
+        </div>
+      </div>
+      <div class="regatta-card">
+        <img src="images/regata-sanroque2025.jpg" alt="LVII Regata San Roque – XIII Trofeo Ramiro Carregal" loading="lazy" style="width:100%;max-height:200px;object-fit:contain;background:#1a3a5c;">
+        <div class="regatta-card-body">
+          <h3>LVII Regata San Roque – XIII Trofeo Ramiro Carregal</h3>
+          <p class="regatta-date">📅 24–25 agosto 2025 &nbsp;<span style="background:rgba(255,255,255,.2);padding:2px 8px;border-radius:4px;font-size:.75rem">Disputada</span></p>
+          <p class="regatta-desc">Trofeo para la clase Snipe que se celebra desde 1968.</p>
+          <div class="regatta-btns"><a href="https://escora.rfgvela.es/regatta/trofeo-san-roque-2025" target="_blank" class="btn-white">Resultados</a></div>
+        </div>
+      </div>
+  </div>
+  <div class="regattas-stats">
+    <h3>Nuestras Regatas Históricas</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-bubble"><span id="edition-rt">30</span></div>
+        <h4>Regata Rodríguez-Toubes</h4><p>Desde 1997 para la clase cruceros</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-bubble"><span id="edition-sr">58</span></div>
+        <h4>Trofeo San Roque</h4><p>Desde 1968 para la clase Snipe</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-bubble"><span id="edition-santa">4</span></div>
+        <h4>Trofeo Santa Rita</h4><p>Desde 2023 para la clase cruceros</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ NEWS ═══ -->
+<section id="noticias"><div class="container">
+  <div class="section-header">
+    <h2>Noticias</h2>
+    <div class="underline-bar"></div>
+    <p>Últimas novedades del club</p>
+  </div>
+  <div class="news-grid">
+    
+      <article class="news-card">
+        <img src="images/news-liga2026-trofeos.jpg" alt="ENTREGA DE TROFEOS LIGA DE CRUCEROS RÍA DE AROUSA 2026" loading="lazy">
+        <div class="news-card-body">
+          <div class="news-date">29 marzo 2026</div>
+          <h3>ENTREGA DE TROFEOS LIGA DE CRUCEROS RÍA DE AROUSA 2026</h3>
+          <p class="news-content">El sábado 28 de marzo organizamos la última regata de la Liga y se realizó la entrega de trofeos en la sede del RCRG.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="images/news-gala-vela.jpg" alt="EL RCRG EN LA GALA DA VELA GALEGA 2025" loading="lazy">
+        <div class="news-card-body">
+          <div class="news-date">28 marzo 2026</div>
+          <h3>EL RCRG EN LA GALA DA VELA GALEGA 2025</h3>
+          <p class="news-content">Miembros de la Junta Directiva del Club asistieron a la Gala de la Vela Gallega. Aquí junto al Presidente de la federación D. Manuel Villaverde.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="images/news-laconada.jpg" alt="LACÓN CON GRELOS POR CARNAVAL" loading="lazy">
+        <div class="news-card-body">
+          <div class="news-date">18 febrero 2026</div>
+          <h3>LACÓN CON GRELOS POR CARNAVAL</h3>
+          <p class="news-content">Reunión de socios por Carnaval con la tradicional "Laconada".</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="images/news-cgv.png" alt="CONVENIO CON EL CENTRO GALLEGO DE VELA" loading="lazy">
+        <div class="news-card-body">
+          <div class="news-date">9 febrero 2026</div>
+          <h3>CONVENIO CON EL CENTRO GALLEGO DE VELA</h3>
+          <p class="news-content">Como otros años, hemos renovado el convenio con el CGV de Vilagarcía, mediante el cual los socios e hijos de socios se pueden beneficiar de un descuento en las tarifas oficiales del centro.</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="images/news-afternoontea.jpg" alt="PRIMER AFTERNOON TEA EN EL CLUB." loading="lazy">
+        <div class="news-card-body">
+          <div class="news-date">10 enero 2026</div>
+          <h3>PRIMER AFTERNOON TEA EN EL CLUB.</h3>
+          <p class="news-content">En enero celebramos nuestro primer "Afternoon Tea". Os avisaremos del próximo para que no os lo podáis perder.</p>
+        </div>
+      </article>
+  </div>
+</div></section>
+
+<!-- ═══ CONVENIOS ═══ -->
+<section id="convenios"><div class="container">
+  <div class="section-header">
+    <h2>Convenios de Reciprocidad</h2>
+    <div class="underline-bar"></div>
+    <p>Durante todos estos años el RCRG se ha relacionado con numerosos Clubs nacionales e internacionales creando acuerdos de correspondencia. Los socios del Real Club de Regatas Galicia pueden acceder y disfrutar de las instalaciones de estos clubes y recíprocamente.</p>
+  </div>
+  <div class="convenios-grid">
+    
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://clubdemaralmeria.es/" target="_blank">Club de Mar Almería</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcna.es/" target="_blank">Real Club Náutico Arrecife (Lanzarote)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcncastellon.es/" target="_blank">Real Club Náutico Castellón</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rfev.es/clubes/club-nautico-castilla/" target="_blank">Club Náutico Castilla (Madrid)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://cnciutadella.com/es/" target="_blank">Club Nàutic Ciutadella (Menorca)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcne.es/" target="_blank">Real Club Náutico de Estepona (Málaga)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.clubfinancierogenova.com/" target="_blank">Club Financiero Génova (Madrid)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://nauticmasnou.com/es/" target="_blank">Club Nàutic El Masnou (Barcelona)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.realclubmaritimomelilla.es/clmar/" target="_blank">Real Club Marítimo de Melilla</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://cmpanxon.es/" target="_blank">Club Marítimo de Panxón (Nigrán - Pontevedra)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://clubnauticosevilla.com/" target="_blank">Club Náutico Sevilla</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnt.com/" target="_blank">Real Club Náutico Torrevieja (Alicante)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://cnvitoria.com/" target="_blank">Club Náutico de Vitoria</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcmarsc.es/" target="_blank">Real Club Marítimo del Abra / Real Sporting Club (Las Arenas - Bizkaia)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcmaraguete.com/" target="_blank">Real Club de Mar de Aguete (Marín - Pontevedra)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcra.es/" target="_blank">Real Club de Regatas de Alicante</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.maritimbarcelona.org/" target="_blank">Reial Club Marítim de Barcelona</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnb.com/" target="_blank">Real Club Náutico de Barcelona</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcncadiz.com/" target="_blank">Real Club Náutico de Cádiz</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://clubregatascartagena.es/" target="_blank">Real Club de Regatas de Cartagena</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcncoruna.com/" target="_blank">Real Club Náutico La Coruña</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnlalinea.es/" target="_blank">Real Club Náutico La línea de la Concepción</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://realclubmediterraneo.com/" target="_blank">Real Club Mediterráneo (Málaga)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcngc.com/" target="_blank">Real Club Náutico de Gran Canaria</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnp.es/" target="_blank">Real Club Náutico de Palma (Palma de Mallorca)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcnpsm.es/" target="_blank">Real Club Náutico el Puerto de Santa María</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnauticosalinas.es/" target="_blank">Real Club Náutico de Salinas (Asturias)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcnss.com/" target="_blank">Real Club Náutico de San Sebastián</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://realclubmaritimodemarbella.com/" target="_blank">Real Club Marítimo de Marbella</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.rcntarragona.org/" target="_blank">Reial Club Náutic de Tarragona</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcnauticovigo.com/" target="_blank">Real Club Náutico de Vigo</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.realliganaval.com/" target="_blank">Real Liga Naval Española</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcnt.es/" target="_blank">Real Club Náutico de Tenerife</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://rcar.es/" target="_blank">Real Club Astur de Regatas (Gijón - Asturias)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.nauticoriveira.com/" target="_blank">Clube Náutico Deportivo de Riveira</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.clubdemar-mallorca.com/" target="_blank">Club de Mar - Mallorca</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.cncascais.com/" target="_blank">Clube Naval de Cascais (Portugal)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://anl.pt/" target="_blank">Associaçao Naval de Lisboa (Portugal)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://quintadolorde.pt/" target="_blank">Iate Clube Quinta do Lorde (I. Madeira - Portugal)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://clubevelaatlantico.pt/" target="_blank">Clube de Vela Atlantico (Leca da Palmeira - Portugal)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://ycporto.pt/" target="_blank">Yate Clube de Porto (Portugal)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.royalcork.com/" target="_blank">Royal Cork Yacht Club (Reino Unido)</a></div>
+      </div>
+      <div class="convenio-item">
+        <div class="convenio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11c1.5-2 4-2 4 1s-2 5-4 5H8c-2 0-4-3-4-5s2.5-3 4-1c.5-2 2.5-3 4-1 1.5-2 3.5-1 4 1z"/>
+          </svg>
+        </div>
+        <div class="convenio-link"><a href="https://www.yachtclubcomo.com/" target="_blank">Yacht Club Como (Italia)</a></div>
+      </div>
+  </div>
+</div></section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contacto"><div class="container">
+  <div class="section-header">
+    <h2>Contacto</h2>
+    <div class="underline-bar"></div>
+    <p>Puede rellenar este formulario o enviarnos un correo electrónico</p>
+  </div>
+  <div class="contact-layout">
+    <div>
+      <div class="contact-info-box">
+        <h3>Información de Contacto</h3>
+        <div class="cinfo-row">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="cinfo-label">Dirección</div><div class="cinfo-text">Avenida de la Marina, 74<br>36600 Vilagarcía de Arousa. Pontevedra.</div></div>
+        </div>
+        <div class="cinfo-row">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72 12.05 12.05 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.05 12.05 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="cinfo-label">Teléfono</div><div class="cinfo-text">986 500 123<br>610 926 126</div></div>
+        </div>
+        <div class="cinfo-row">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="cinfo-label">Email</div><div class="cinfo-text"><a href="mailto:correo@rcrgalicia.com">correo@rcrgalicia.com</a></div></div>
+        </div>
+        <div class="cinfo-row">
+          <div class="cinfo-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="cinfo-label">Horario</div><div class="cinfo-text">Mañana: 12 a 14:30 h<br>Tarde: 16 a 20 h (vie-sáb hasta 21:00)<br><small style="color:#9ca3af">Domingo cerrado</small></div></div>
+        </div>
+      </div>
+      <div class="social-row">
+        <span style="color:#6b7280;font-weight:500">Síguenos:</span>
+        <a href="https://www.instagram.com/rcrgalicia/" target="_blank" rel="noopener" class="social-link">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-box">
+      <h3>Envíanos un mensaje</h3>
+      <form id="contact-form" onsubmit="submitContactForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label for="f-name">Nombre</label><input id="f-name" type="text" placeholder="Tu nombre" required /></div>
+          <div class="form-group"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="tu@email.com" required /></div>
+        </div>
+        <div class="form-group"><label for="f-subject">Asunto</label><input id="f-subject" type="text" placeholder="Asunto del mensaje" required /></div>
+        <div class="form-group"><label for="f-message">Mensaje</label><textarea id="f-message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea></div>
+        <button type="submit" class="btn-submit" id="submit-btn">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ SPONSORS ═══ -->
+<section id="patrocinadores"><div class="container sponsors-section">
+  <h2>Patrocinadores y Colaboradores</h2>
+  <div class="underline-bar"></div>
+  <div class="sponsors-track-wrapper">
+    <div class="sponsors-track">
+      <div class="sponsor-card"><img src="images/sponsor-frinsa.png" alt="FRINSA"></div><div class="sponsor-card"><img src="images/sponsor-fedgalvela.jpg" alt="Fed. Gallega de Vela"></div><div class="sponsor-card"><img src="images/sponsor-brandia.jpg" alt="Brandia"></div><div class="sponsor-card"><img src="images/sponsor-gadis.png" alt="Gadis"></div><div class="sponsor-card"><img src="images/sponsor-diputacion.png" alt="Diputación Pontevedra"></div><div class="sponsor-card"><img src="images/sponsor-abanca.jpg" alt="Abanca"></div><div class="sponsor-card"><img src="images/sponsor-concello.jpg" alt="Concello Vilagarcía"></div><div class="sponsor-card"><img src="images/sponsor-xuntos.png" alt="Xuntos Seguros"></div><div class="sponsor-card"><img src="images/sponsor-xunta.png" alt="Xunta de Galicia"></div><div class="sponsor-card"><img src="images/sponsor-frinsa.png" alt="FRINSA"></div><div class="sponsor-card"><img src="images/sponsor-fedgalvela.jpg" alt="Fed. Gallega de Vela"></div><div class="sponsor-card"><img src="images/sponsor-brandia.jpg" alt="Brandia"></div><div class="sponsor-card"><img src="images/sponsor-gadis.png" alt="Gadis"></div><div class="sponsor-card"><img src="images/sponsor-diputacion.png" alt="Diputación Pontevedra"></div><div class="sponsor-card"><img src="images/sponsor-abanca.jpg" alt="Abanca"></div><div class="sponsor-card"><img src="images/sponsor-concello.jpg" alt="Concello Vilagarcía"></div><div class="sponsor-card"><img src="images/sponsor-xuntos.png" alt="Xuntos Seguros"></div><div class="sponsor-card"><img src="images/sponsor-xunta.png" alt="Xunta de Galicia"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer><div class="container">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-escudo-wrap">
+        <div class="footer-escudo" onclick="openLightbox('images/escudo-rcrg.png','Escudo RCRG')">
+          <img src="images/escudo-rcrg.png" alt="Escudo RCRG" />
+        </div>
+        <div class="footer-brand-text"><h3>Real Club de Regatas</h3><p>Galicia</p></div>
+      </div>
+      <p class="footer-desc">El Club Náutico más antiguo de Galicia, fundado en 1902.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="#inicio"    onclick="navScrollTo('inicio')">Inicio</a></li>
+        <li><a href="#historia"  onclick="navScrollTo('historia')">Historia</a></li>
+        <li><a href="#galeria"   onclick="navScrollTo('galeria')">Galería</a></li>
+        <li><a href="#regatas"   onclick="navScrollTo('regatas')">Regatas</a></li>
+        <li><a href="#noticias"  onclick="navScrollTo('noticias')">Noticias</a></li>
+        <li><a href="#convenios" onclick="navScrollTo('convenios')">Convenios</a></li>
+        <li><a href="#contacto"  onclick="navScrollTo('contacto')">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><span>Avenida de la Marina, 74</span></li>
+        <li><span>36600 Vilagarcía de Arousa</span></li>
+        <li><span>Telf: 986 500 123 / 610 926 126</span></li>
+        <li><a href="mailto:correo@rcrgalicia.com">correo@rcrgalicia.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p id="footer-year">© 2026 Real Club de Regatas Galicia. Todos los derechos reservados.</p>
+  </div>
+</div></footer>
+
+<script src="main.js"></script>
+</body>
+</html>
